@@ -1,0 +1,160 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.4.12/schema.json",
+  "files": {
+    "includes": [
+      "**",
+      "!**/node_modules",
+      "!**/public",
+      "!**/build",
+      "!**/.output",
+      "!**/.nuxt",
+      "!**/dist",
+      "!**/*.lock",
+      "!**/*.css",
+      "!**/pkg",
+      "!**/*.jsx",
+      "!.agent"
+    ],
+    "ignoreUnknown": true
+  },
+  "vcs": {
+    "defaultBranch": "main",
+    "useIgnoreFile": true,
+    "clientKind": "git",
+    "enabled": true,
+    "root": "."
+  },
+  "formatter": {
+    "indentWidth": 2,
+    "indentStyle": "space",
+    "lineWidth": 100,
+    "enabled": true,
+    "expand": "auto"
+  },
+  "assist": { "actions": { "source": { "organizeImports": "off" } } },
+  "linter": {
+    "enabled": true,
+    "domains": {
+      "vue": "recommended"
+    },
+    "rules": {
+      "nursery": {
+        "useSortedClasses": {
+          "level": "warn",
+          "options": {
+            "attributes": ["class", "className", "classList"],
+            "functions": ["clsx", "tv", "cn", "cva"]
+          }
+        }
+      },
+      "recommended": true,
+      "a11y": {
+        "noNoninteractiveElementToInteractiveRole": "off",
+        "useFocusableInteractive": "off",
+        "useKeyWithClickEvents": "off",
+        "noSvgWithoutTitle": "off"
+      },
+      "style": {
+        "useExponentiationOperator": "off",
+        "useNodejsImportProtocol": "off",
+        "useSelfClosingElements": "off",
+        "noNonNullAssertion": "off",
+        "noParameterAssign": "off",
+        "noUselessElse": {
+          "options": {},
+          "fix": "safe",
+          "level": "warn"
+        },
+        "noUnusedTemplateLiteral": {
+          "options": {},
+          "fix": "safe",
+          "level": "warn"
+        },
+        "useImportType": {
+          "options": {},
+          "fix": "safe",
+          "level": "warn"
+        },
+        "useTemplate": {
+          "options": {},
+          "fix": "safe",
+          "level": "warn"
+        },
+        "useConst": {
+          "options": {},
+          "fix": "safe",
+          "level": "warn"
+        }
+      },
+      "complexity": {
+        "noExtraBooleanCast": "off",
+        "noStaticOnlyClass": "off",
+        "useArrowFunction": "off",
+        "noBannedTypes": "off",
+        "noThisInStatic": "off",
+        "noUselessConstructor": "warn",
+        "useLiteralKeys": {
+          "options": {},
+          "fix": "safe",
+          "level": "warn"
+        },
+        "useOptionalChain": {
+          "options": {},
+          "fix": "safe",
+          "level": "warn"
+        },
+        "noArguments": "off"
+      },
+      "suspicious": {
+        "noImplicitAnyLet": "warn",
+        "noAssignInExpressions": "off",
+        "noPrototypeBuiltins": "off",
+        "noArrayIndexKey": "off",
+        "noExplicitAny": "off",
+        "noGlobalIsNan": {
+          "options": {},
+          "fix": "safe",
+          "level": "warn"
+        },
+        "noDoubleEquals": {
+          "options": {},
+          "fix": "safe",
+          "level": "warn"
+        }
+      },
+      "correctness": {
+        "noUnsafeFinally": "off",
+        "noSwitchDeclarations": {
+          "options": {},
+          "fix": "safe",
+          "level": "warn"
+        },
+        "useParseIntRadix": "off"
+      },
+      "performance": {
+        "noDelete": {
+          "options": {},
+          "fix": "safe",
+          "level": "warn"
+        }
+      }
+    }
+  },
+  "overrides": [
+    {
+      "includes": ["**/*.vue"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useConst": "off",
+            "useImportType": "off"
+          },
+          "correctness": {
+            "noUnusedVariables": "off",
+            "noUnusedImports": "off"
+          }
+        }
+      }
+    }
+  ]
+}

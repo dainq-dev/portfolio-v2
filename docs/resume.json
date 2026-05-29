@@ -1,0 +1,171 @@
+{
+  "personal": {
+    "name": "NGUYEN QUOC DAI",
+    "role": "Software Engineer",
+    "location": "Ho Chi Minh City, Vietnam",
+    "email": "dainguyen020199@gmail.com",
+    "phone": "+84 961 664 550"
+  },
+  "summary": "Senior Full-Stack Engineer with 5+ years building production-grade systems across FinTech, healthcare, and economic data platforms. Deep expertise in TypeScript, Next.js, NestJS, and microservices architecture. Proven track record of shipping AI-integrated features — including LLM agents, prompt engineering pipelines, and agentic workflows — that delivered measurable business impact. Leverage AI tooling (Cursor, Copilot, Claude) and automation to achieve 3–4× engineering throughput. Strong fundamentals in OOP, SOLID, clean architecture, and end-to-end ownership from system design to deployment.",
+  "skills": {
+    "Languages": ["TypeScript", "JavaScript", "SQL", "C#"],
+    "Frontend": ["Next.js", "React.js", "Redux Toolkit", "Vue3", "Nuxt 4", "React Native", "Tailwind"],
+    "Backend": ["NestJS", "Node.js", "Express", "ASP.NET Core", "Redis", "Directus", "Supabase", "Bun", "Hono"],
+    "AI_LLM": ["OpenAI API", "Langchain", "Prompt Engineering", "RAG", "tool-calling", "agentic workflows"],
+    "AITooling": ["Cursor", "Github Copilot", "Claude", "Antigravity"],
+    "Databases": ["PostgreSQL", "MySQL", "MongoDB"],
+    "DataViz": ["Highcharts", "ECharts", "ApexCharts"],
+    "DevOpsCloud": ["Docker", "Nginx", "GitHub Actions CI/CD", "AWS (S3, EC2, ECS, Lambda)", "Linux", "Garden", "K8s", "kubectl"],
+    "TestingQA": ["Bun:test", "Playwright", "Postman", "Cucumber Gherkin"],
+    "Others": ["WebSocket", "Jest", "Jira", "Storybook", "OIDC"]
+  },
+  "experience": [
+    {
+      "company": "FeCredit Vietnam JSC",
+      "domain": "Financial",
+      "role": "Senior Technology Solution Specialist",
+      "period": "June 2026 – Present",
+      "projects": []
+    },
+    {
+      "company": "FIDT Joint Stock Company",
+      "domain": "Financial",
+      "role": "Full-Stack Software Engineer",
+      "period": "June 2025 – June 2026",
+      "projects": [
+        {
+          "name": "WFM — Wealth & Financial Management Platform",
+          "description": "Personal finance + real estate advisory for thousands of users",
+          "achievements": [
+            "Delivered AI-powered financial health assessment features integrating LLM-based recommendations into the wealth management flow, directly improving conversion of advisory consultations.",
+            "Integrated BizFly CRM for sales pipeline automation: commission processing, deal tracking, and automated follow-up workflows — reducing manual ops work by ~40%.",
+            "Optimised frontend performance via image preloading, asset caching, and hybrid SSR/SPA rendering strategy, achieving noticeably faster LCP and improved Core Web Vitals.",
+            "Leveraged Cursor + Claude as pair-programmers throughout feature cycles, compressing typical 2-week sprints into ~5 days without quality regression."
+          ],
+          "technologies": ["TypeScript", "Node.js", "Directus", "Express", "Vue3", "Nuxt4", "Playwright", "Tailwind", "Hono"]
+        },
+        {
+          "name": "IAM — Identity & Access Management System",
+          "description": "Centralised auth layer for FIDT's platform",
+          "achievements": [
+            "Architected middleware for token verification at API Gateway level, enforcing IAM standards across all downstream services.",
+            "Designed and optimised role/group-based authorisation logic per endpoint — with automated test coverage via Playwright to catch regressions on each deploy.",
+            "Used AI-assisted code generation to scaffold boilerplate auth modules, reducing setup time from days to hours."
+          ],
+          "technologies": ["TypeScript", "Directus", "Express", "Vue3", "OIDC", "Kratos"]
+        },
+        {
+          "name": "ER — Real Estate Information Platform",
+          "description": "Real estate project, providing customers with an overview of each property.",
+          "achievements": [
+            "Collaborated with Product Owner on project structure; owned SEO architecture, performance budgets, and E2E testing strategy.",
+            "Automated test suite generation using AI tooling, achieving 80%+ coverage on critical user flows with minimal manual effort."
+          ],
+          "technologies": ["TypeScript", "Node.js", "Directus", "Express", "Vue3"]
+        }
+      ]
+    },
+    {
+      "company": "Vietstats Co., Ltd",
+      "domain": "Economic Data Analytics & AI Platform",
+      "role": "Full-Stack Engineer → Team Lead",
+      "period": "Sep 2023 – June 2025",
+      "projects": [
+        {
+          "name": "Data BOT — AI-Powered Economic Data Agent",
+          "description": "GPT-4 multi-agent system for natural language economic queries",
+          "achievements": [
+            "Designed and shipped a multi-agent system combining GPT-4 with custom tool-calling framework (search, comparison, time-series retrieval, statistical functions) — achieving 92%+ accuracy on internal benchmarks.",
+            "Implemented iterative reasoning loop with supervisor agent for answer validation and quality-gating; integrated live context injection from Kafka streams and internal economic databases.",
+            "Engineered the full prompt pipeline: system prompts, few-shot examples, chain-of-thought scaffolding, and output parsers — reducing hallucination rate by ~60% vs. baseline."
+          ],
+          "technologies": ["TypeScript", "Node.js", "OpenAI GPT", "LangChain-style", "PostgreSQL", "Docker"]
+        },
+        {
+          "name": "Embeddable Chart Configuration Platform",
+          "description": "Media agencies & businesses embed interactive economic charts into any CMS",
+          "achievements": [
+            "Built full configuration dashboard with Next.js 14 App Router + React Hook Form, reducing chart creation time from hours to under 3 minutes.",
+            "Developed secure embed script (iFrame + postMessage) with REST/GraphQL APIs — JWT auth, rate-limiting, and query caching; achieved zero security incidents in 12 months.",
+            "Implemented real-time data streaming via WebSocket + Kafka with advanced Highcharts Stock visualisations (drill-down, dynamic themes, annotations).",
+            "Containerised entire platform with Docker Compose, Nginx reverse proxy, and automated zero-downtime deployments via GitHub Actions."
+          ],
+          "technologies": ["TypeScript", "Next.js 14", "NestJS", "PostgreSQL", "ECharts", "Kafka", "Docker", "Nginx"]
+        },
+        {
+          "name": "Advance — Analytics Workspace for C-level & Analysts",
+          "description": "Advanced Analytics Workspace for C-level & Analysts",
+          "achievements": [
+            "Single-handedly architected and delivered: drag-and-drop multi-chart layouts, real-time collaboration, custom indicators, saved templates, PDF/PNG export.",
+            "Built complex canvas engine with resizable grid, synchronised cross-tab state, and live data streaming via Kafka + WebSocket.",
+            "Designed component-based design system, backend microservices, and full CI/CD pipeline from scratch."
+          ],
+          "technologies": ["TypeScript", "Next.js 14", "NestJS", "PostgreSQL", "Highcharts", "ECharts", "Kafka", "Docker", "Nginx"]
+        },
+        {
+          "name": "Vietstats.vn — Data-as-a-Service Platform",
+          "description": "Vietnam economic data platform — multi-million row datasets",
+          "achievements": [
+            "Architected from scratch the entire platform: PostgreSQL schema with partitioning for multi-million-row datasets, NestJS microservices, and Next.js 14 SSR frontend",
+            "Built secure RESTful + GraphQL APIs with role-based access, query caching, and rate limiting",
+            "Containerized services with Docker, configured Nginx + multi-region setup, and automated CI/CD via GitHub Actions"
+          ],
+          "technologies": ["TypeScript", "Next.js 14", "NestJS", "PostgreSQL", "ECharts", "Kafka", "Docker", "Nginx"]
+        }
+      ]
+    },
+    {
+      "company": "Doctor Check JSC",
+      "domain": "Digital Healthcare Provider",
+      "role": "Full-Stack & Frontend Engineer",
+      "period": "Mar 2021 – Aug 2023",
+      "projects": [
+        {
+          "name": "Customer Portal",
+          "description": "Patient-Facing Web Platform",
+          "achievements": [
+            "Led development of end-to-end patient portal (Next.js + NestJS + SQL Server) for appointment booking, medical reports, and payment",
+            "Reduced average page load time by 60% through SSR, code splitting, and image optimization"
+          ],
+          "technologies": ["Next.js", "NestJS", "SQL Server", "Ant Design", "Redux Toolkit"]
+        },
+        {
+          "name": "CRM & Omni-Channel Messaging System",
+          "description": "CRM & Messaging System",
+          "achievements": [
+            "Built real-time CRM dashboard integrating Facebook Messenger & Zalo OA via WebSocket for 50+ agents",
+            "Implemented customer timeline, tagging, and automated workflows → improved agent response time by 45%"
+          ],
+          "technologies": ["React.js", "TypeScript", "Redux Toolkit", "Firebase", "WebSocket"]
+        },
+        {
+          "name": "Zalo Mini App",
+          "description": "Healthcare App (100K+ patients)",
+          "achievements": [
+            "Single-handedly designed, developed, and shipped appointment & medical result app reaching 100K+ patients",
+            "Authored UI/UX guidelines and technical documentation adopted company-wide"
+          ],
+          "technologies": ["React.js", "TypeScript", "Firebase"]
+        },
+        {
+          "name": "HIS — Hospital Information System",
+          "description": "Internal Hospital System",
+          "achievements": [
+            "Migrated legacy modules to modern React SPA architecture, improving internal staff productivity by 30%"
+          ],
+          "technologies": ["Typescript", "React.js", "MUI", "WebSocket"]
+        }
+      ]
+    }
+  ],
+  "education": {
+    "degree": "Bachelor of Information Technology",
+    "institution": "Ho Chi Minh City Industry and Trade College",
+    "period": "2018 – 2021"
+  },
+  "achievements": [
+    "Top 15 National Finalist – Startup Kite 2021 (Vietnam’s largest startup contest)",
+    "National Encouragement Award – AI-based smart attendance system with automatic temperature detection"
+  ],
+  "languages": ["Vietnamese (Native)", "English (Full professional proficiency)"]
+}
