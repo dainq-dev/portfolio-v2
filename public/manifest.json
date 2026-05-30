@@ -1,0 +1,16 @@
+{
+  "short_name": "Dai Nguyen",
+  "name": "Nguyen Quoc Dai | Senior Full-Stack Engineer Portfolio",
+  "icons": [
+    {
+      "src": "/images/portfolio-preview.png",
+      "type": "image/png",
+      "sizes": "1200x630"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0b080c",
+  "theme_color": "#0b080c",
+  "display": "standalone",
+  "orientation": "portrait"
+}
