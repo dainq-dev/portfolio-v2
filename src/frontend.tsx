@@ -9,7 +9,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { App } from "./App";
 import { preload, preconnect } from "react-dom";
-
+import { SpeedInsights } from "@vercel/speed-insights/react"
 // ⚡ React 19 Preconnecting: Resolve web font domains early to speed up text paint
 preconnect("https://fonts.googleapis.com");
 preconnect("https://fonts.gstatic.com", { crossOrigin: "anonymous" });
@@ -24,6 +24,7 @@ const elem = document.getElementById("root")!;
 const app = (
   <StrictMode>
     <App />
+    <SpeedInsights />
   </StrictMode>
 );
 
