@@ -21,17 +21,10 @@
   },
   "experience": [
     {
-      "company": "FeCredit Vietnam JSC",
-      "domain": "Financial",
-      "role": "Senior Technology Solution Specialist",
-      "period": "June 2026 – Present",
-      "projects": []
-    },
-    {
       "company": "FIDT Joint Stock Company",
       "domain": "Financial",
       "role": "Full-Stack Software Engineer",
-      "period": "June 2025 – June 2026",
+      "period": "June 2025 – Present",
       "projects": [
         {
           "name": "WFM — Wealth & Financial Management Platform",

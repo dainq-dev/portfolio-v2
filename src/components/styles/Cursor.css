@@ -1,33 +1,58 @@
-.cursor-main {
-  --size: 0px;
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accentColor, #c2a4ff);
+  border-radius: 50%;
   position: fixed;
-  top: calc(var(--size) / -2);
-  left: calc(var(--size) / -2);
-  width: var(--size);
-  height: var(--size);
-  border-radius: 50px;
+  top: 0;
+  left: 0;
   pointer-events: none;
-  z-index: 99;
-  background-color: #e6c3ff;
-  box-shadow: 0px 0px 30px 0px rgb(175, 131, 255);
+  z-index: 9999;
   mix-blend-mode: difference;
-  transition: top 0.3s ease-out, left 0.3s ease-out, width 0.3s ease-out,
-    height 0.3s ease-out;
 }
-.cursor-icons {
-  top: 10px;
-  left: 10px;
-  height: calc(var(--cursorH) - 20px);
-  transition: all 0.5s ease-out, height 0.5s ease-in-out;
+
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(194, 164, 255, 0.45);
+  background-color: rgba(194, 164, 255, 0);
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(194, 164, 255, 0);
+  transition: 
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
-.cursor-disable {
-  --size: 0px;
+
+/* Stacking hierarchy for rings */
+.cursor-ring-0 { z-index: 9998; }
+.cursor-ring-1 { z-index: 9997; }
+.cursor-ring-2 { z-index: 9996; }
+.cursor-ring-3 { z-index: 9995; }
+.cursor-ring-4 { z-index: 9994; }
+.cursor-ring-5 { z-index: 9993; }
+
+.cursor-label {
+  font-family: "Geist", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #0b080c;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
 }
-@media only screen and (min-width: 600px) {
-  .cursor-main {
-    --size: 50px;
-  }
-  .cursor-disable {
-    --size: 0px;
+
+/* Hide on mobile/touch screens */
+@media (hover: none) and (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
   }
 }

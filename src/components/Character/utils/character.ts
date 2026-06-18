@@ -1,6 +1,5 @@
 import * as THREE from "three";
 import { DRACOLoader, GLTF, GLTFLoader } from "three-stdlib";
-import { setCharTimeline, setAllTimeline } from "../../utils/GsapScroll";
 import { decryptFile } from "./decrypt";
 
 const setCharacter = (
@@ -27,7 +26,12 @@ const setCharacter = (
           blobUrl,
           async (gltf) => {
             character = gltf.scene;
-            await renderer.compileAsync(character, camera, scene);
+            try {
+              await renderer.compileAsync(character, camera, scene);
+            } catch (compileError) {
+              console.warn("compileAsync warning (can be ignored if unmounting):", compileError);
+            }
+
             character.traverse((child: any) => {
               if (child.isMesh) {
                 const mesh = child as THREE.Mesh;
@@ -36,20 +40,20 @@ const setCharacter = (
                 mesh.frustumCulled = true;
               }
             });
-            resolve(gltf);
-            setCharTimeline(character, camera);
-            setAllTimeline();
             character!.getObjectByName("footR")!.position.y = 3.36;
             character!.getObjectByName("footL")!.position.y = 3.36;
             dracoLoader.dispose();
+            resolve(gltf);
           },
           undefined,
           (error) => {
+            dracoLoader.dispose();
             console.error("Error loading GLTF model:", error);
             reject(error);
           }
         );
       } catch (err) {
+        dracoLoader.dispose();
         reject(err);
         console.error(err);
       }
