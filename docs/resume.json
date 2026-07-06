@@ -28,6 +28,7 @@
       "projects": [
         {
           "name": "WFM — Wealth & Financial Management Platform",
+          "iframe": "https://wealthforme.fidt.vn",
           "description": "Personal finance + real estate advisory for thousands of users",
           "achievements": [
             "Delivered AI-powered financial health assessment features integrating LLM-based recommendations into the wealth management flow, directly improving conversion of advisory consultations.",
@@ -39,6 +40,7 @@
         },
         {
           "name": "IAM — Identity & Access Management System",
+          "iframe": "https://identity-internal.fidt.vn",
           "description": "Centralised auth layer for FIDT's platform",
           "achievements": [
             "Architected middleware for token verification at API Gateway level, enforcing IAM standards across all downstream services.",
@@ -49,6 +51,7 @@
         },
         {
           "name": "ER — Real Estate Information Platform",
+          "iframe": "https://mywealth.fidt.vn",
           "description": "Real estate project, providing customers with an overview of each property.",
           "achievements": [
             "Collaborated with Product Owner on project structure; owned SEO architecture, performance budgets, and E2E testing strategy.",
@@ -76,6 +79,7 @@
         },
         {
           "name": "Embeddable Chart Configuration Platform",
+          "iframe": "https://portal.vietstats.vn",
           "description": "Media agencies & businesses embed interactive economic charts into any CMS",
           "achievements": [
             "Built full configuration dashboard with Next.js 14 App Router + React Hook Form, reducing chart creation time from hours to under 3 minutes.",
@@ -97,6 +101,7 @@
         },
         {
           "name": "Vietstats.vn — Data-as-a-Service Platform",
+          "iframe": "https://vietstats.vn",
           "description": "Vietnam economic data platform — multi-million row datasets",
           "achievements": [
             "Architected from scratch the entire platform: PostgreSQL schema with partitioning for multi-million-row datasets, NestJS microservices, and Next.js 14 SSR frontend",

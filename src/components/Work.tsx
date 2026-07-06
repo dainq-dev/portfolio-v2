@@ -93,7 +93,16 @@ const Work = () => {
                   {project.description}
                 </p>
               </div>
+              {!!project.iframe ?
+              <iframe
+              src={project.iframe}
+              title={project.name}
+              className="work-iframe"
+              loading="lazy"
+              ></iframe>
+              :
               <WorkImage image="/images/placeholder.webp" alt={project.name} />
+            }
             </div>
           ))}
         </div>
