@@ -118,6 +118,11 @@
   max-width: 100%;
   max-height: 350px;
 }
+
+.work-image iframe {
+  max-width: 100%;
+  max-height: 350px;
+}
 @media only screen and (max-height: 900px) {
   .work-image img {
     max-height: 250px;
