@@ -14,6 +14,7 @@ interface Project {
   achievements: string[];
   technologies: string[];
   company: string;
+  iframe?: string;
 }
 
 const Work = () => {
@@ -23,7 +24,7 @@ const Work = () => {
     job.projects.map((project) => ({
       ...project,
       company: job.company,
-    }))
+    })),
   );
 
   useGSAP(() => {
@@ -38,10 +39,10 @@ const Work = () => {
       const lastBox = boxes[boxes.length - 1] as HTMLElement;
       const contentWidth = lastBox.offsetLeft + lastBox.offsetWidth - firstBox.offsetLeft;
       const paddingRight = parseFloat(window.getComputedStyle(workFlex).paddingRight) || 0;
-      return (contentWidth + paddingRight) - window.innerWidth;
+      return contentWidth + paddingRight - window.innerWidth;
     };
 
-    let timeline = gsap.timeline({
+    const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: ".work-section",
         start: "top top",
@@ -89,20 +90,41 @@ const Work = () => {
                 </div>
                 <h4>Tools and features</h4>
                 <p>{project.technologies.join(", ")}</p>
-                <p className="work-desc" style={{ marginTop: '10px', fontSize: '14px', opacity: 0.8 }}>
+                <p
+                  className="work-desc"
+                  style={{ marginTop: "10px", fontSize: "14px", opacity: 0.8 }}
+                >
                   {project.description}
                 </p>
               </div>
-              {!!project.iframe ?
-              <iframe
-              src={project.iframe}
-              title={project.name}
-              className="work-iframe"
-              loading="lazy"
-              ></iframe>
-              :
-              <WorkImage image="/images/placeholder.webp" alt={project.name} />
-            }
+              <div className="browser-mockup">
+                <div className="browser-header">
+                  <span className="dot dot-red"></span>
+                  <span className="dot dot-yellow"></span>
+                  <span className="dot dot-green"></span>
+                  <div className="browser-address-bar">
+                    {project.iframe ? (
+                      <a href={project.iframe} target="_blank" rel="noopener noreferrer">
+                        {project.iframe.replace(/^https?:\/\//, "")}
+                      </a>
+                    ) : (
+                      `${project.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}.local`
+                    )}
+                  </div>
+                </div>
+                <div className="browser-content">
+                  {project.iframe ? (
+                    <iframe
+                      src={project.iframe}
+                      title={project.name}
+                      className="work-iframe"
+                      loading="lazy"
+                    ></iframe>
+                  ) : (
+                    <WorkImage image="/images/placeholder.webp" alt={project.name} />
+                  )}
+                </div>
+              </div>
             </div>
           ))}
         </div>

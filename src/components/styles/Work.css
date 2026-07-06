@@ -33,16 +33,23 @@
 .work-box {
   padding: 80px;
   display: flex;
-  flex-direction: column;
-  width: 600px;
+  flex-direction: row;
+  align-items: center;
+  width: 950px;
   box-sizing: border-box;
   border-right: 1px solid #363636;
   flex-shrink: 0;
-  gap: 50px;
-  justify-content: start;
+  gap: 60px;
+  justify-content: space-between;
 }
 .work-flex .work-box:nth-child(even) {
-  flex-direction: column-reverse;
+  flex-direction: row-reverse;
+}
+.work-info {
+  width: 380px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
 }
 .work-title {
   justify-content: space-between;
@@ -72,40 +79,160 @@
   margin-top: 3px;
 }
 .work-info > p {
-  width: 90%;
+  width: 95%;
 }
-.work-image {
+
+/* Browser Mockup Styles */
+.browser-mockup {
+  flex-grow: 1;
+  max-width: 500px;
+  height: 380px;
+  border: 1px solid #363636;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #121212;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 5px 15px rgba(0, 0, 0, 0.2);
   display: flex;
-  width: 100%;
-  justify-content: center;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+              border-color 0.3s ease;
 }
-.work-image-in {
+
+.browser-mockup:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.6), 0 8px 25px rgba(0, 0, 0, 0.3);
+  border-color: var(--accentColor);
+}
+
+.browser-header {
+  height: 36px;
+  background: #1e1e1e;
+  border-bottom: 1px solid #363636;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  flex-shrink: 0;
+}
+
+.browser-header .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+  display: inline-block;
+}
+
+.browser-header .dot-red {
+  background-color: #ff5f56;
+}
+
+.browser-header .dot-yellow {
+  background-color: #ffbd2e;
+}
+
+.browser-header .dot-green {
+  background-color: #27c93f;
+}
+
+.browser-address-bar {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 11px;
+  color: #888;
+  background: #0d0d0d;
+  margin: 0 20px 0 14px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  border: 1px solid #2a2a2a;
+}
+
+.browser-address-bar a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+.browser-address-bar a:hover {
+  color: var(--accentColor);
+}
+
+.browser-content {
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+  height: calc(100% - 36px);
+  background: #0d0d0d;
+}
+
+.work-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #fff;
+  display: block;
+}
+
+/* Customize image/video inside mockup */
+.browser-content .work-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.browser-content .work-image-in {
+  width: 100%;
+  height: 100%;
+  display: block;
   position: relative;
 }
+
+.browser-content .work-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.5s ease;
+  max-width: 100%;
+  max-height: none;
+}
+
+.browser-content .work-image:hover img {
+  transform: scale(1.04);
+}
+
 .work-link {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 15px;
+  right: 15px;
   background-color: var(--backgroundColor);
-  width: 50px;
+  width: 44px;
   border-radius: 50px;
-  height: 50px;
+  height: 44px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 25px;
-  box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.5),
-    inset 0px 0px 10px 0px #393939;
-  transition: 0.3s;
+  font-size: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4), inset 0px 0px 5px #393939;
+  transition: opacity 0.3s ease, transform 0.3s ease;
   opacity: 0;
+  transform: scale(0.9);
+  z-index: 10;
 }
-.work-image a:hover {
-  color: inherit;
-}
-.work-image a:hover .work-link {
+
+.browser-content .work-image-in:hover .work-link {
   opacity: 1;
+  transform: scale(1);
 }
-.work-image video {
+
+.browser-content video {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -114,18 +241,11 @@
   background-color: #000;
   object-fit: cover;
 }
-.work-image img {
-  max-width: 100%;
-  max-height: 350px;
-}
 
-.work-image iframe {
-  max-width: 100%;
-  max-height: 350px;
-}
+/* Height based scaling for desktop viewports */
 @media only screen and (max-height: 900px) {
-  .work-image img {
-    max-height: 250px;
+  .browser-mockup {
+    height: 310px;
   }
   .work-box {
     padding-top: 40px;
@@ -137,19 +257,38 @@
     margin-top: 70px;
   }
 }
+
+@media only screen and (max-height: 650px) {
+  .browser-mockup {
+    height: 230px;
+  }
+  .work-section h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  .work-box {
+    gap: 30px;
+  }
+}
+
+/* Responsive Width Breakpoints */
 @media only screen and (max-width: 1400px) {
+  .work-box {
+    width: 820px;
+    padding: 60px;
+    gap: 40px;
+  }
+  .work-info {
+    width: 320px;
+  }
   .work-title h3 {
-    font-size: 35px;
+    font-size: 40px;
   }
   .work-info p {
     font-size: 13px;
   }
   .work-info h4 {
-    font-size: 15px;
-  }
-  .work-box {
-    width: 450px;
-    padding: 50px;
+    font-size: 16px;
   }
   .work-flex {
     margin-left: -50px;
@@ -159,42 +298,9 @@
     font-size: 50px;
   }
 }
-@media only screen and (max-width: 1400px) {
-  .work-box {
-    width: 350px;
-    padding: 30px;
-  }
-  .work-flex {
-    margin-left: -30px;
-    padding-right: 45px;
-  }
-}
 
-@media only screen and (max-height: 650px) {
-  .work-image img {
-    max-height: 200px;
-  }
-  .work-section h2 {
-    font-size: 40px;
-    margin-bottom: 20px;
-  }
-  .work-box {
-    gap: 20px;
-  }
-}
-/* @media only screen and (max-width: 900px) {
-  .work-image img {
-    max-height: 200px;
-  }
-  .work-section h2 {
-    font-size: 40px;
-    margin-bottom: 20px;
-  }
-  .work-box {
-    gap: 20px;
-  }
-} */
-@media only screen and (max-width: 1025px) {
+/* Mobile & Tablet Breakpoints */
+@media only screen and (max-width: 1024px) {
   .work-container {
     align-content: normal;
   }
@@ -204,10 +310,27 @@
     padding-right: 60px !important;
   }
   .work-box {
-    width: 450px !important;
+    width: 480px !important;
     height: 100% !important;
     padding: 40px !important;
-    gap: 40px !important;
+    gap: 30px !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+  .work-flex .work-box:nth-child(even) {
+    flex-direction: column !important;
+  }
+  .work-info {
+    width: 100%;
+  }
+  .browser-mockup {
+    width: 100%;
+    max-width: 100%;
+    height: 280px;
+  }
+  /* Disable interaction on mobile iframe to prevent scroll lock issues */
+  .work-iframe {
+    pointer-events: none;
   }
 }
 
@@ -215,8 +338,8 @@
   .work-box {
     width: calc(100vw - 20px) !important;
     height: 100% !important;
-    padding: 20px !important;
-    gap: 30px !important;
+    padding: 30px 20px !important;
+    gap: 20px !important;
   }
   .work-flex {
     margin-left: -15px !important;
@@ -226,7 +349,7 @@
     font-size: 28px !important;
     line-height: 30px !important;
   }
-  .work-image img {
-    max-height: 180px !important;
+  .browser-mockup {
+    height: 220px;
   }
 }
