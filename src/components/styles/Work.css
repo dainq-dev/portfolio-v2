@@ -13,6 +13,7 @@
   height: 100vh;
   box-sizing: border-box;
   will-change: transform;
+  display: none;
 }
 
 .work-container {
@@ -362,4 +363,10 @@
     font-size: 28px !important;
     line-height: 30px !important;
   }
+}
+
+@media screen and (min-width: 800px) {
+ .work-section{
+  display: block;
+ }
 }
